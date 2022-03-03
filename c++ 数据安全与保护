@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class Point{
+    public:
+       Point(int x=0,int y=0):xp(xp),yp(yp){//注意这里xp，yp，与private中相对应。
+           count++;
+       }
+       Point(Point &p){
+           xp=p.xp;
+           yp=p.yp;//注意这里xp，yp，与private中相对应。
+           count++;
+       }
+       ~Point(){count++;}
+       int getx(){return xp;}
+       int gety(){return yp;}//注意这里xp，yp，与private中相对应。
+       void show(){
+           cout<<count<<endl;
+       }
+
+    private:
+       int xp,yp;
+       static int count;//静态变量
+};
+int Point::count=0;//这个count在main中无法初始化。
+int main(){
+    
+    Point a(4,5);
+    a.show();
+    Point b(a);
+    b.show();
+    return 0;
+}
