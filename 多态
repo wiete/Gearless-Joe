@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class Complex{
+    private:
+    double real;
+    double imag;
+    public:
+    Complex(double r=0.0,double i=0.0):real(r),imag(i){}//构造函数的作用：初始化
+    Complex operator+ (const Complex &c2) const;
+    Complex operator- (const Complex &c2) const;
+    void display() const;
+};
+Complex Complex::operator+(const Complex &c2) const{
+    return Complex(real+c2.real,imag+c2.imag);
+}
+void Complex::display()const{
+    cout<<real<<imag<<endl;
+ 
+}
+int main(){
+    Complex c1(5,4),c2(1,1),c3;
+    c3=c1+c2;//实现了类的相加
+    c3.display();
+    return 0;
+}
