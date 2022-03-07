@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class Base1{
+    public:
+    void display() const{
+        cout<<"1"<<endl;
+    }
+};
+class Base2:public Base1{
+    public:
+    void display() const{
+        cout<<"2"<<endl;
+    }
+
+};
+class Base3 : public Base2{
+    public:
+    void display() const{
+        cout<<"3"<<endl;
+    }
+};
+void fun(Base1 * p){
+    p->display();
+}
+int main(){
+    Base1 b1;
+    Base2 b2;
+    Base3 b3;
+    fun(&b1);
+    fun(&b2);
+    fun(&b3);
+    return 0;
+}
