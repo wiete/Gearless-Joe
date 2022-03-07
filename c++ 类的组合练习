@@ -1,0 +1,47 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class Point {
+    private:
+    int x,y;
+    public:
+    Point(int xp=0,int yp=0){//构造函数
+        x=xp;
+        y=yp;
+    }
+    Point(Point &p);//复制构造函数
+    int getx(){return x;}
+    int gety(){return y;}
+
+};
+Point::Point(Point &p){//复制构造函数的实现
+    x=p.x;
+    y=p.y;
+}
+class Line{
+    public:
+    Line(Point xp1,Point xp2);//组合类构造函数的声明
+    Line(Line &l);//复制刚刚的组合类构造函数的声明
+    double getlen(){
+        return len;
+    }
+    private:
+    Point p1,p2;
+    double len;
+
+};
+Line::Line(Point xp1,Point xp2):p1(xp1),p2(xp2){//组合类构造函数
+    double x=static_cast<double>(p1.getx()-p2.getx());
+    double y=static_cast<double>(p1.gety()-p2.gety()); 
+    len=sqrt(x*x+y*y);
+}
+Line::Line(Line &l):p1(l.p1),p2(l.p2){//复制刚刚的组合类构造函数
+    len=l.len;
+}
+int main(){
+    Point pp1(1,1),pp2(4,5);
+    Line line(pp1,pp2);
+    Line line2(line);
+    cout<<line.getlen()<<endl;
+    cout<<line2.getlen()<<endl;
+}
