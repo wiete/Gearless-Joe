@@ -1,0 +1,172 @@
+
+def judge_repeat(value, list=[]):
+    for i in range(0, len(list)):
+        if (list[i] == value):
+            return 1
+        else:
+            if (i != len(list) - 1):
+                continue
+            else:
+                return 0
+
+#自定义
+def judge_last(list):
+    for i in list:
+        if i == '1':#亚洲
+            for i in list :
+                if i == '7' :#黄种人
+                   for i in list:
+                        if i == '10':#五常
+                           print("亚洲、黄种人、五常之一--->中国")
+                           print("所示国家为中国")
+                           return 0
+                        elif i == '14':#发达国家
+                            for i in list :
+                                if i == '22' :#战败国
+                                  print("亚洲、黄种人、发达国家--->日本")
+                                  print("所示国家为日本")
+                                  return 0
+                        elif i == '15' :#发展中
+                            for i in list :
+                                if i == '19':#社会主义
+                                    for i in list :#有核国家
+                                        if i == '11':
+                                            print("亚洲、黄种人、发展中国家、社会主义、有核国家--->中国")
+                                            print("所示国家为中国")
+                                            return 0
+                elif i == '8' :#白种人
+                     for i in list :
+                         if i == '14':#发达
+                             for i in list :
+                               if i == '18':#资本主义
+                                   for i in list :
+                                       if i == '23' :#热
+                                           print("亚洲、白种人--->沙特阿拉伯")
+                                           print("所示国家为沙特阿拉伯")
+                                           return 0
+                elif i == '10':#五常
+                           print("亚洲、五常之一--->中国")
+                           print("所示国家为中国")
+                           return 0
+
+        if i =='2':#欧洲
+            for i in list:
+                if i == '10':#五常
+                    print("欧洲、五常之一--->英国")
+                    print("所示国家为英国")
+                    return 0
+                elif i == '22':
+                    print("欧洲、战败国--->德国")
+                    print("所示国家为德国")
+                    return 0
+                elif i == '12':
+                    print("欧洲、国土面积小--->黑山共和国")
+                    print("所示为黑山共和国")
+                    return 0
+        if i == '4':#北美洲
+            for i in list :
+                if i == '10':#五常
+                    print("北美洲、五常之一--->美国")
+                    print("所示国家为美国")
+                    return 0
+                if i == '8':#白种人
+                    for i in list :
+                        if i == '11':#有核国家
+                            print("北美洲、白种人、有核国家--->美国")
+                            print("所示国家为美国")
+                            return 0
+                        elif i == '14':#发达国家
+                            for i in list :
+                                if i == '17':#加入北约
+                                    for i in list :
+                                        if i == '18':#资本主义
+                                            for i in list :
+                                                if i == '20' :#战争多发
+                                                    print("北美洲、白种人、发达国家、加入北约、资本主义、战争多发--->美国")
+                                                    print("所示国家为美国")
+                                                    return 0                                          
+        if i == '3':#非洲
+            for i in list :
+                if i == '23' :#气候炎热
+                  for i in list :
+                      if i == '9':#黑种人
+                        for i in list :
+                            if i == '12' :#国土面积小
+                              for i in list :
+                                  if i == '16' :#贫困国家
+                                     print("非洲、气候炎热、黑种人、国土面积小、贫困国家--->津巴韦布")
+                                     print("所示国家为津巴韦布")
+                                     return 0
+        if i == '5' :#南美洲
+           for i in list :
+                if i == '8':#白种人为主
+                 for i in list :
+                     if i == '12':#国土面积小
+                         for i in list :
+                             if i == '15':#发展中国家
+                               for i in list :
+                                    if i == '18':#资本主义
+                                        for i in list :
+                                            if i == '20':#战争多发
+                                                print("南美洲、白种人、国土面积小、发展中国家、资本主义、战争多发--->古巴")
+                                                print("所示国家为古巴")
+                                                return 0
+                elif i == '20': #战争多发
+                   print("南美洲、战争多发--->古巴")
+                   print("所示国家为古巴")
+                   return 0
+        if i == '6':#澳洲
+           for i in list :
+               if i == '8':#白人
+                   for i in list :
+                       if i == '14':#发达国家
+                         for i in list :
+                             if i == '21' :#英语
+                                 for i in list :
+                                     if i == '23' :#气候炎热
+                                         print("澳洲、白人、发达国家、英语、气候炎热--->澳大利亚")
+                                         print("所示国家为澳大利亚")
+                                         return 0
+        else:
+            if (list.index(i) != len(list) - 1):
+                continue
+            else:
+                print("根据所给条件无法判断")
+                return 0
+
+
+
+
+        
+
+dict_before = {'1': '亚洲', '2': '欧洲', '3': '非洲', '4': '北美洲', '5': '南美洲', '6': '澳洲', '7': '黄种人为主',
+               '8': '白种人为主', '9': '黑种人为主', '10': '五常之一', '11': '有核国家', '12': '国土面积很小', '13': '欧盟国家', '14': '发达国家',
+               '15': '发展中国家', '16': '贫困国家', '17': '加入了北约', '18': '资本主义国家', '19': '社会主义国家', '20': '战争多发',
+               '21': '英语为主','22': '二战战败国', '23': '气候炎热', '24': '黑山共和国',
+               '25': '澳大利亚', '26': '英国', '27': '德国', '28': '美国', '29': '日本', '30': '中国',
+               '31': '古巴', '32': '沙特阿拉伯', '33': '津巴韦布'}
+print("""输入对应条件前面的数字:
+                                *************************************************************************
+                                *1:亚洲  2:欧洲  3:非洲  4:北美洲  5:南美洲                                 
+                                *6:澳洲  7:黄种人  8:白种人  9:黑种人  10:五常之一                           
+                                *11:有核国家  12:国土面积小  13:欧盟国家  14:发达国家  15：发展中国家        
+                                *16:贫困国家  17:加入北约  18:资本主义国家 19:社会主义国家  20:战争多发  
+                                *21：英语为主  22:二战战败国  23：气候炎热              
+                                *************************************************************************
+                                *******************当输入数字0时!程序结束*********************************
+     """)
+list_real = []
+while (1):
+    # 循环输入前提条件所对应的字典中的键
+    num_real = input("请输入：")
+    list_real.append(num_real)
+    if (num_real == '0'):
+        break
+print("\n")
+print("前提条件为：")
+# 输出前提条件
+for i in range(0, len(list_real) - 1):
+    print(dict_before[list_real[i]], end=" ")
+print("\n")
+print("推理过程如下：")
+judge_last(list_real)
